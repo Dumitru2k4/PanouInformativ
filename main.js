@@ -11,16 +11,16 @@ let keyboardTimeout;
 // Funcție pentru a închide tastatura virtuală osk
 
 const mainWindow_width = 1920;
-const mainWindow_height = 1080;
+const mainWindow_height = 1080 - 200;
 let Keyboardwidth = 0;
 
 function create_mainWindow() {
     mainWindow = new BrowserWindow({
         width: 1920 - Keyboardwidth,
-        height: mainWindow_height - 200,
+        height: mainWindow_height,
         x: 0,
         y: 100,
-        resizable: false,
+        resizable: true,
         modal: true,
         alwaysOnTop: true,
         frame: false, // Ascunde bara de titlu și butoanele de control
@@ -92,11 +92,9 @@ function events_mainWindows() {
         // console.log(title);
         if (title.includes("input")) {
             afisare();
-            Keyboardwidth = 430;
         }
         else {
             ascundere();
-            Keyboardwidth = 0;
 
 
         }
@@ -116,9 +114,12 @@ function events_mainWindows() {
 }
 
 function ascundere() {
+    mainWindow.setSize(mainWindow_width, mainWindow_height);
     keyboardWindow.hide();
+
 }
 function afisare() {
+    mainWindow.setSize(mainWindow_width - 430, mainWindow_height);
     keyboardWindow.show();
 }
 
@@ -179,7 +180,7 @@ function create_infoWindow() {
 function create_keyboardWindow() {
     keyboardWindow = new BrowserWindow({
         width: 430,
-        height: mainWindow_height - 200,
+        height: mainWindow_height,
         x: mainWindow_width - 430,
         y: 100,
         resizable: false,
@@ -210,7 +211,7 @@ function create_loadingWindow() {
     // Creăm fereastra de încărcare
     loadingWindow = new BrowserWindow({
         width: 1920,
-        height: mainWindow_height - 200,
+        height: mainWindow_height,
         x: 0,
         y: 100,
         resizable: false,
