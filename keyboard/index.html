@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alphabet Keyboard</title>
+<style>
+ body {
+  
+  width: 410px;
+  display: flex;
+  flex-direction: column;
+    font-family: Arial, sans-serif;
+   
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+
+  }
+
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+}
+.number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+    font-size: 50px;
+    border: 2px solid #c5410d;
+    cursor: pointer;
+}
+.key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+    font-size: 40px;
+    border: 2px solid #000;
+    cursor: pointer;
+  }
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+  #backspace {
+    width: 100px;
+    margin: 5px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #space {
+    width: 220px;
+  }
+
+  #searchBar {
+    margin-top: 20px;
+    width: 400px;
+    height: 40px;
+    font-size: 16px;
+    padding: 5px;
+    
+  }
+  #close {
+    color: #f0f0f0;
+    background-color: rgb(255, 0, 0);
+    opacity: .8;
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    padding: 5px;
+    
+  }
+</style>
+</head>
+<body>
+<div id="keyboard">
+  <div class="row">
+    <div class="number" onclick="addText('1')">1</div>
+    <div class="number" onclick="addText('2')">2</div>
+    <div class="number" onclick="addText('3')">3</div>
+    <div class="number" onclick="addText('4')">4</div>
+    <div class="number" onclick="addText('5')">5</div>
+  </div>
+  <div class="row">
+    <div class="number" onclick="addText('6')">6</div>
+    <div class="number" onclick="addText('7')">7</div>
+    <div class="number" onclick="addText('8')">8</div>
+    <div class="number" onclick="addText('9')">9</div>
+    <div class="number" onclick="addText('0')">0</div>
+  </div>
+  <div class="row">
+  <div class="key" onclick="addText('A')">A</div>
+  <div class="key" onclick="addText('B')">B</div>
+  <div class="key" onclick="addText('C')">C</div>
+  <div class="key" onclick="addText('D')">D</div>
+  <div class="key" onclick="addText('E')">E</div>
+</div>
+  <div class="row">
+  <div class="key" onclick="addText('F')">F</div>
+  <div class="key" onclick="addText('G')">G</div>
+  <div class="key" onclick="addText('H')">H</div>
+  <div class="key" onclick="addText('I')">I</div>
+  <div class="key" onclick="addText('J')">J</div>
+</div>
+  <div class="row">
+  <div class="key" onclick="addText('K')">K</div>
+  <div class="key" onclick="addText('L')">L</div>
+  <div class="key" onclick="addText('M')">M</div>
+  <div class="key" onclick="addText('N')">N</div>
+  <div class="key" onclick="addText('O')">O</div>
+</div>
+<div class="row">
+  <div class="key" onclick="addText('P')">P</div>
+  <div class="key" onclick="addText('Q')">Q</div>
+  <div class="key" onclick="addText('R')">R</div>
+  <div class="key" onclick="addText('S')">S</div>
+  <div class="key" onclick="addText('T')">T</div>
+</div>
+<div class="row">
+  <div class="key" onclick="addText('U')">U</div>
+  <div class="key" onclick="addText('V')">V</div>
+  <div class="key" onclick="addText('W')">W</div>
+  <div class="key" onclick="addText('X')">X</div>
+</div>
+<div class="row">
+  <div class="key" onclick="addText('Y')">Y</div>
+  <div class="key" onclick="addText('Z')">Z</div>
+  <div id="backspace" class="key" onclick="addText('!')">Șterge</div>
+  
+</div>
+<div class="row">
+  <button class="key" id="space" onclick="addText(' ')">Spațiu</button>
+</div>
+<div class="row">
+  <button class="key" id="close" onclick="closekey()">Închide</button>
+</div>
+</div>
+
+<script src="renderer.js"></script>
+</body>
+</html>
