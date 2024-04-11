@@ -6,4 +6,8 @@ function opencontacte() {
     window.electronAPI.contacte()
     
 }
+function opentarife() {
+    window.electronAPI.tarife()
+
+}
   

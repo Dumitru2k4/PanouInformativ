@@ -12,7 +12,7 @@ let keyboardTimeout;
 
 const mainWindow_width = 1920;
 const mainWindow_height = 1080 - 200;
-let Keyboardwidth = 0;
+let Keyboardwidth = 0
 
 function create_mainWindow() {
     mainWindow = new BrowserWindow({
@@ -20,7 +20,7 @@ function create_mainWindow() {
         height: mainWindow_height,
         x: 0,
         y: 100,
-        resizable: true,
+        resizable: false,
         modal: true,
         alwaysOnTop: true,
         frame: false, // Ascunde bara de titlu și butoanele de control
@@ -78,6 +78,11 @@ function events_mainWindows() {
     ipcMain.on('contacte', (event) => {
         loadingWindow.show();
         mainWindow.loadFile(path.join(__dirname, '/contacte/index.html'))
+        lastTime = new Date();
+    })
+    ipcMain.on('tarife', (event) => {
+        loadingWindow.show();
+        mainWindow.loadFile(path.join(__dirname, '/tarife/index.html'))
         lastTime = new Date();
     })
 
