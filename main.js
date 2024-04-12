@@ -5,8 +5,8 @@ const { exec } = require('child_process');
 let loadedURL;
 let mainWindow;
 let loadingWindow;
+let keyboardWindow;
 let loadTimeout;
-let videoTimeout;
 let keyboardTimeout;
 
 const mainWindow_width = 1920;
@@ -31,7 +31,6 @@ function create_mainWindow() {
     })
     // mainWindow.loadURL('https://amt-centru.md');
     //mainWindow.webContents.openDevTools();
-
     mainWindow.loadURL('http://localhost:3000/')
 }
 function events_mainWindows() {
@@ -86,8 +85,9 @@ function events_mainWindows() {
         lastTime = new Date();
     })
 
-    ipcMain.on('page_loaded', (event, title) => {
-        console.log("page_loaded");
+    ipcMain.on('page_loaded', () => {
+        //console.log("page_loaded"); //verificare daca sa incarcat pagina
+        ascundere();
     })
     //#endregion
 
@@ -100,7 +100,6 @@ function events_mainWindows() {
         }
         else {
             ascundere();
-
 
         }
     })
@@ -119,12 +118,16 @@ function events_mainWindows() {
 }
 
 function ascundere() {
-    mainWindow.setSize(mainWindow_width, mainWindow_height);
     keyboardWindow.hide();
-
+    mainWindow.setResizable(true)
+    mainWindow.setSize(mainWindow_width, mainWindow_height, false);
+    mainWindow.setResizable(false)
 }
 function afisare() {
-    mainWindow.setSize(mainWindow_width - 430, mainWindow_height);
+    console.log("222")
+    mainWindow.setResizable(true)
+    mainWindow.setSize(mainWindow_width - 430, mainWindow_height, false);
+    mainWindow.setResizable(false)
     keyboardWindow.show();
 }
 
@@ -136,8 +139,6 @@ function create_tabWindow() {
         x: 0,
         y: 980,
         resizable: false,
-
-        skipTaskbar: true,
         frame: false, // Ascunde bara de titlu și butoanele de control pentru fereastra secundară
         alwaysOnTop: true,
         webPreferences: {
@@ -234,9 +235,7 @@ function create_loadingWindow() {
 }
 
 //#endregion 
-app.on('window-all-closed', () => {
-    app.quit()
-})
+
 
 let lastTime = new Date();
 app.on('ready', () => {
@@ -262,4 +261,10 @@ app.on('ready', () => {
         console.log("Sa resetat timerul de 3 minute");
         //clearTimeout(loadTimeout);
     }, 1000 * 60 * 3);
+    app.on('window-all-closed', () => {
+        app.quit()
+    })
+    mainWindow.on('closed', () => {
+        app.quit();
+    });
 })

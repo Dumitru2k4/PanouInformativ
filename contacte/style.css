@@ -1,6 +1,9 @@
  body{
-  margin-top: 17%;
-  margin-left: 650px;
+  display: flex;
+align-content: center;
+justify-content: center;
+  left: 40%;
+  margin-top:20%;
   scale: 2.0;
   overflow-x: hidden;
  }
