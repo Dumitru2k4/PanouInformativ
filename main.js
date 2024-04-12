@@ -136,7 +136,7 @@ function create_tabWindow() {
         x: 0,
         y: 980,
         resizable: false,
-        parent: loadingWindowhel,
+
         skipTaskbar: true,
         frame: false, // Ascunde bara de titlu și butoanele de control pentru fereastra secundară
         alwaysOnTop: true,
@@ -149,7 +149,6 @@ function create_tabWindow() {
 
     // Încarcă o altă pagină HTML în fereastra secundară
     secondaryWindow.loadFile(path.join(__dirname, '/tab/index.html'));
-    secondaryWindow.focus();
     // secondaryWindow.webContents.openDevTools();
     // Atașăm un ascultător de eveniment pentru clicuri pe fereastra principală
     secondaryWindow.on('click', (event, { x, y }) => {
