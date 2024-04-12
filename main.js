@@ -8,18 +8,18 @@ let loadingWindow;
 let loadTimeout;
 let videoTimeout;
 let keyboardTimeout;
-// Funcție pentru a închide tastatura virtuală osk
 
 const mainWindow_width = 1920;
-const mainWindow_height = 1080 - 200;
-let Keyboardwidth = 0
+const mainWindow_height = 1080 - 198;
 
 function create_mainWindow() {
     mainWindow = new BrowserWindow({
-        width: 1920 - Keyboardwidth,
+        width: 1920 ,
         height: mainWindow_height,
+        minWidth: 0,
+        minHeight: 0,
         x: 0,
-        y: 100,
+        y: 99,
         resizable: false,
         modal: true,
         alwaysOnTop: true,
@@ -136,6 +136,7 @@ function create_tabWindow() {
         x: 0,
         y: 980,
         resizable: false,
+        skipTaskbar: true,
         frame: false, // Ascunde bara de titlu și butoanele de control pentru fereastra secundară
         alwaysOnTop: true,
         webPreferences: {
@@ -155,6 +156,7 @@ function create_tabWindow() {
     });
 
 }
+//info window
 function create_infoWindow() {
     InfoWindow = new BrowserWindow({
         width: 1920,
@@ -235,7 +237,6 @@ app.on('window-all-closed', () => {
     app.quit()
 })
 
-
 let lastTime = new Date();
 app.on('ready', () => {
     create_keyboardWindow();
@@ -252,14 +253,12 @@ app.on('ready', () => {
 
         if (milis > 1000 * 60 || mainWindow.webContents.getURL().includes('3000')) {
 
-            console.log("a timp");
-            keyboardWindow.hide();
+            console.log("Revenim la pagina principala");
+            ascundere();
             mainWindow.loadURL('http://localhost:3000/');
             lastTime = new Date();
         }
-        console.log("a trecut timp");
+        console.log("Sa resetat timerul de 3 minute");
         //clearTimeout(loadTimeout);
     }, 1000 * 60 * 3);
 })
-
-//Server
