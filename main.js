@@ -28,10 +28,14 @@ function create_mainWindow() {
             //  devTools: false, // Interzice deschiderea DevTools
             preload: path.join(__dirname, '/window/preload.js')
         }
+        
     })
     // mainWindow.loadURL('https://amt-centru.md');
     //mainWindow.webContents.openDevTools();
     mainWindow.loadURL('http://localhost:3000/')
+    mainWindow.on('click', (event, { x, y }) => {
+        console.log(`Clic realizat în poziția (${x}, ${y})`);
+    })
 }
 function events_mainWindows() {
     mainWindow.webContents.on('dom-ready', () => {
@@ -89,7 +93,6 @@ function events_mainWindows() {
         //console.log("page_loaded"); //verificare daca sa incarcat pagina
         ascundere();
     })
-    //#endregion
 
 
     ipcMain.on('page_click', (event, title) => {
@@ -97,6 +100,7 @@ function events_mainWindows() {
         // console.log(title);
         if (title.includes("input")) {
             afisare();
+
         }
         else {
             ascundere();
@@ -109,7 +113,6 @@ function events_mainWindows() {
         ascundere();
 
     })
-    //tastatura
     ipcMain.on('addtext', (event, char) => {
         //console.log(char);
         mainWindow.webContents.send('test', char);
@@ -130,6 +133,7 @@ function afisare() {
     mainWindow.setResizable(false)
     keyboardWindow.show();
 }
+//#endregion
 
 //#region  windowsCreator
 function create_tabWindow() {
