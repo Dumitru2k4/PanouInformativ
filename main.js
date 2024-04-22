@@ -255,7 +255,7 @@ app.on('ready', () => {
         let now = new Date();
         let milis = now - lastTime;
 
-        if (milis > 1000 * 60 || mainWindow.webContents.getURL().includes('3000')) {
+        if (milis > 1000 * 60 *2 && !mainWindow.webContents.getURL().includes('3000')) {
 
             console.log("Revenim la pagina principala");
             ascundere();
