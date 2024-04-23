@@ -4,13 +4,14 @@ const fs = require('fs');
 const { exec } = require('child_process');
 let loadedURL;
 let mainWindow;
+let InfoWindow
 let loadingWindow;
 let keyboardWindow;
 let loadTimeout;
 let keyboardTimeout;
 
 const mainWindow_width = 1920;
-const mainWindow_height = 1080 - 198;
+const mainWindow_height = 1080 - 215;
 
 function create_mainWindow() {
     mainWindow = new BrowserWindow({
@@ -19,7 +20,7 @@ function create_mainWindow() {
         minWidth: 0,
         minHeight: 0,
         x: 0,
-        y: 99,
+        y: 98,
         resizable: false,
         modal: true,
         alwaysOnTop: true,
@@ -139,9 +140,9 @@ function afisare() {
 function create_tabWindow() {
     let secondaryWindow = new BrowserWindow({
         width: 1920,
-        height: 100,
+        height: 110,
         x: 0,
-        y: 980,
+        y: 960,
         resizable: false,
         frame: false, // Ascunde bara de titlu și butoanele de control pentru fereastra secundară
         alwaysOnTop: true,
