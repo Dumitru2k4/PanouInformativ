@@ -11,7 +11,7 @@ let loadTimeout;
 let keyboardTimeout;
 
 const mainWindow_width = 1920;
-const mainWindow_height = 1080 - 208;
+const mainWindow_height = 1080 - 205;
 
 function create_mainWindow() {
     mainWindow = new BrowserWindow({
@@ -23,7 +23,6 @@ function create_mainWindow() {
         y: 98,
         resizable: false,
         modal: true,
-        alwaysOnTop: true,
         frame: false, // Ascunde bara de titlu și butoanele de control
         webPreferences: {
             //  devTools: false, // Interzice deschiderea DevTools
