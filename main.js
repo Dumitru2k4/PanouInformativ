@@ -11,7 +11,7 @@ let loadTimeout;
 let keyboardTimeout;
 
 const mainWindow_width = 1920;
-const mainWindow_height = 1080 - 215;
+const mainWindow_height = 1080 - 205;
 
 function create_mainWindow() {
     mainWindow = new BrowserWindow({
