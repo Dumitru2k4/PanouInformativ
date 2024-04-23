@@ -142,7 +142,7 @@ function create_tabWindow() {
         width: 1920,
         height: 110,
         x: 0,
-        y: 960,
+        y: 970,
         resizable: false,
         frame: false, // Ascunde bara de titlu și butoanele de control pentru fereastra secundară
         alwaysOnTop: true,
