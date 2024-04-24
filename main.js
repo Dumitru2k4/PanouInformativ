@@ -95,9 +95,23 @@ function events_mainWindows() {
     })
 
 
-    ipcMain.on('page_click', (event, title) => {
+    ipcMain.on('page_click', (event, title, url) => {
         lastTime = new Date();
-        // console.log(title);
+        // console.log(url);
+
+
+        fetch(`http://10.0.0.17:3000/api/log`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ data: url }),
+        })
+
+
+
+
+
         if (title.includes("input")) {
             afisare();
 
@@ -127,7 +141,6 @@ function ascundere() {
     mainWindow.setResizable(false)
 }
 function afisare() {
-    console.log("222")
     mainWindow.setResizable(true)
     mainWindow.setSize(mainWindow_width - 430, mainWindow_height, false);
     mainWindow.setResizable(false)
