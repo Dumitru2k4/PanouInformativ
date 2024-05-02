@@ -21,6 +21,7 @@ function create_mainWindow() {
         minHeight: 0,
         x: 0,
         y: 98,
+        alwaysOnTop: true,
         resizable: false,
         modal: true,
         frame: false, // Ascunde bara de titlu și butoanele de control
