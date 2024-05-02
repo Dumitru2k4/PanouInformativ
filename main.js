@@ -32,7 +32,7 @@ function create_mainWindow() {
     })
     // mainWindow.loadURL('https://amt-centru.md');
     //mainWindow.webContents.openDevTools();
-    mainWindow.loadURL('http://10.0.0.17:3000/')
+    mainWindow.loadURL('http://10.0.0.3:3000/')
     mainWindow.on('click', (event, { x, y }) => {
         console.log(`Clic realizat în poziția (${x}, ${y})`);
     })
@@ -100,7 +100,7 @@ function events_mainWindows() {
         // console.log(url);
 
 
-        fetch(`http://10.0.0.17:3000/api/log`, {
+        fetch(`http://10.0.0.3:3000/api/log`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -272,7 +272,7 @@ app.on('ready', () => {
 
             console.log("Revenim la pagina principala");
             ascundere();
-            mainWindow.loadURL('http://10.0.0.17:3000/');
+            mainWindow.loadURL('http://10.0.0.3:3000/');
             lastTime = new Date();
         }
         console.log("Sa resetat timerul de 3 minute");
