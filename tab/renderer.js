@@ -10,3 +10,7 @@ function opentarife() {
     window.electronAPI.tarife()
 
 }
+function acasa() {
+    window.electronAPI.acasa()
+
+}

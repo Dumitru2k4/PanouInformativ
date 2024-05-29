@@ -9,10 +9,10 @@ let loadingWindow;
 let keyboardWindow;
 let loadTimeout;
 let keyboardTimeout;
-
+require('dotenv').config();
+const IP = process.env.IP_server || '';
 const mainWindow_width = 1920;
 const mainWindow_height = 1080 - 205;
-
 function create_mainWindow() {
     mainWindow = new BrowserWindow({
         width: 1920,
@@ -33,7 +33,7 @@ function create_mainWindow() {
     })
     // mainWindow.loadURL('https://amt-centru.md');
     //mainWindow.webContents.openDevTools();
-    mainWindow.loadURL('http://10.0.0.3:3000/')
+    mainWindow.loadURL(IP)
     mainWindow.on('click', (event, { x, y }) => {
         console.log(`Clic realizat în poziția (${x}, ${y})`);
     })
@@ -89,6 +89,11 @@ function events_mainWindows() {
         mainWindow.loadFile(path.join(__dirname, '/tarife/index.html'))
         lastTime = new Date();
     })
+    ipcMain.on('acasa', (event) => {
+        loadingWindow.show();
+        mainWindow.loadURL(IP);
+        lastTime = new Date();
+    })
 
     ipcMain.on('page_loaded', () => {
         //console.log("page_loaded"); //verificare daca sa incarcat pagina
@@ -101,7 +106,7 @@ function events_mainWindows() {
         // console.log(url);
 
 
-        fetch(`http://10.0.0.3:3000/api/log`, {
+        fetch(IP + `api/log`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -273,7 +278,7 @@ app.on('ready', () => {
 
             console.log("Revenim la pagina principala");
             ascundere();
-            mainWindow.loadURL('http://10.0.0.3:3000/');
+            mainWindow.loadURL(IP);
             lastTime = new Date();
         }
         console.log("Sa resetat timerul de 3 minute");
