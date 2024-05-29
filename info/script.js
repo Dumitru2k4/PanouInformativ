@@ -1,56 +1,64 @@
 
 
+async function updateDateTime() {
+  try {
+    // Fetch date and time from the World Time API
+    const response = await fetch('http://worldtimeapi.org/api/ip');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    const now = new Date(data.datetime);
 
-function updateDateTime() {
-    //afisare data
-    var now = new Date();
-    var dateElement = document.getElementById("date");
-    var day = now.getDate();
-    var month = now.getMonth() + 1;
-    var year = now.getFullYear();
-    if(day<9){day="0"+day}
-    if (month<9){month="0"+month}
-    dateElement.innerText = day + '/' + month + '/' + year;
+    // Update date
+    const dateElement = document.getElementById("date");
+    const day = now.getDate();
+    const month = now.getMonth() + 1;
+    const year = now.getFullYear();
+    const formattedDay = day < 10 ? "0" + day : day;
+    const formattedMonth = month < 10 ? "0" + month : month;
+    dateElement.innerText = `${formattedDay}/${formattedMonth}/${year}`;
 
-    //afisare ora
-    var timeElement = document.getElementById("time");
-    var hour = now.getHours();
-    var minutes = now.getMinutes(); //
-    var seconds = now.getSeconds();
-    if(seconds<10){seconds="0"+seconds}
-    if(minutes<10){minutes="0"+minutes}
-    if(hour<10){hour="0"+hour}
-    timeElement.innerText = hour + ':' + minutes + ':' + seconds;
-    
-    
+    // Update time
+    const timeElement = document.getElementById("time");
+    const hour = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    const formattedHour = hour < 10 ? "0" + hour : hour;
+    const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+    const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+    timeElement.innerText = `${formattedHour}:${formattedMinutes}:${formattedSeconds}`;
+  } catch (error) {
+    console.error('Failed to fetch date and time:', error);
   }
+}
 //wheather
-  document.addEventListener('DOMContentLoaded', function() {
-    const API_KEY = 'f97a2b0c39aa943e3c6f287fe852584e'; 
-    const CITY = 'Chisinau'; 
-    
-    const weatherInfo = document.getElementById('weather-info');
-  
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        const temperature = Math.round(data.main.temp - 273.15);
-        weatherInfo.innerHTML = `
+document.addEventListener('DOMContentLoaded', function () {
+  const API_KEY = 'f97a2b0c39aa943e3c6f287fe852584e';
+  const CITY = 'Chisinau';
+
+  const weatherInfo = document.getElementById('weather-info');
+
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      const temperature = Math.round(data.main.temp - 273.15);
+      weatherInfo.innerHTML = `
           <p>${data.name} ${temperature}°C </p> 
         `;
-      })
-      .catch(error => {
-        console.error('Error fetching weather data:', error);
-        weatherInfo.textContent = 'Failed to fetch weather data';
-      });
-  });
-    
-    
+    })
+    .catch(error => {
+      console.error('Error fetching weather data:', error);
+      weatherInfo.textContent = 'Failed to fetch weather data';
+    });
+});
+
+
 
 // Initial call to update date and time
 updateDateTime();
