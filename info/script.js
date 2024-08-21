@@ -3,12 +3,12 @@
 async function updateDateTime() {
   try {
     // Fetch date and time from the World Time API
-    const response = await fetch('http://worldtimeapi.org/api/ip');
+    const response = await fetch('https://timeapi.io/api/time/current/zone?timeZone=Europe%2FChisinau');
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
     const data = await response.json();
-    const now = new Date(data.datetime);
+    const now = new Date(data.dateTime);
 
     // Update date
     const dateElement = document.getElementById("date");

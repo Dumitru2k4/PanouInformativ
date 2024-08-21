@@ -1,7 +1,6 @@
 {
   "name": "panouinformativ-main",
   "version": "1.0.0",
-  "description": "",
   "main": "main.js",
   "scripts": {
     "start": "npm run electron-start ",
@@ -21,5 +20,6 @@
   "devDependencies": {
     "concurrently": "^8.2.2",
     "nodemon": "^3.1.0"
-  }
+  },
+  "description": ""
 }

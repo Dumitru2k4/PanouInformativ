@@ -6,72 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body> 
-<style>
-    *{
+<body>
+    <style>
+        * {
             padding: 0;
             margin: 0;
         }
-    body {
+
+        body {
             overflow: hidden;
             font-family: Arial, sans-serif;
             min-height: 100vh;
             height: 100vh;
         }
-        
-.info {
-    
-    padding: 0;
-    margin: 0;
-    height: 100px;
-    background: rgb(10,1,166);
-    background: linear-gradient(90deg, rgba(10,1,166,1) 0%, rgba(0,114,210,1) 50%, rgba(10,1,166,1) 100%);
-    display: flex;
-    flex-direction: row;
-    align-items: center ;
-    justify-content: left;
-    width: 100%;
-}
-.div{
-    display: flex;
-    flex-direction: column;
-    align-items: center ;
-    justify-content: center;
-    
-}
-.date{
-    
-    color: rgb(255, 255, 255);
-    font-size: 40px;  
-}  
 
-.time{
-    
-    color: rgb(255, 255, 255);
-    font-size: 40px;  
-}
-.weather-info{  
-    margin-right: 10px;
-    margin-left: 50px;
-    font-size: 60px;
-    color: rgb(255, 255, 255);
-}
-.Nume{
-    color: rgb(255, 255, 255);
-    margin-left: 70px;
-    margin-right: 300px;
-    font-size: 90px;
-}
+        .info {
 
-</style>
- 
-      
+            padding: 0;
+            margin: 0;
+            height: 100px;
+            background: rgb(10, 1, 166);
+            background: linear-gradient(90deg, rgba(10, 1, 166, 1) 0%, rgba(0, 114, 210, 1) 50%, rgba(10, 1, 166, 1) 100%);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: left;
+            width: 100%;
+        }
+
+        .div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .date {
+
+            color: rgb(255, 255, 255);
+            font-size: 40px;
+        }
+
+        .time {
+
+            color: rgb(255, 255, 255);
+            font-size: 40px;
+        }
+
+        .weather-info {
+            margin-right: 10px;
+            margin-left: 50px;
+            font-size: 60px;
+            color: rgb(255, 255, 255);
+        }
+
+        .Nume {
+            color: rgb(255, 255, 255);
+            margin-left: 70px;
+            margin-right: 300px;
+            font-size: 90px;
+        }
+    </style>
+
+
     <div class="info">
-        
+
         <div class="Nume">IMSP AMT CENTRU</div>
         <div class="div">
-        <div class="time"><p id="time"></p></div>
-        <div class="date"><p1 id="date"></p1></div>
+            <div class="time">
+                <p id="time"></p>
+            </div>
+            <div class="date">
+                <p1 id="date"></p1>
+            </div>
         </div>
         <div class="weather-info">
             <p2 id="weather-info"></p2>
@@ -81,6 +89,7 @@
 
 
 
-    </body>
+</body>
 <script src="script.js"></script>
+
 </html>
