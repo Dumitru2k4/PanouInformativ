@@ -1,660 +1,94 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    /* Style for the body to center content */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -20%;
+        background-color: #f0f0f0;
+    }
+
+    /* Style for the content div */
+    #content {
+        /* Default font size */
+        border: 2px solid #333;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+        max-height: 400px;
+        overflow-y: auto;
+        transform: scale(2);
+        /* Scale everything by 1.5 times */
+        transform-origin: top left;
+        /* Center align content inside */
+    }
+
+    /* Style for the button within the content */
+    #content .btn_light {
+        font-size: 2.5rem;
+        /* Larger font size for the button */
+        padding: 10px 20px;
+        border: 2px solid #333;
+        background-color: #fff;
+        color: #333;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        margin-top: 20px;
+        /* Margin for spacing above the button */
+    }
+
+    /* Hover effect for the button */
+    #content .btn_light:hover {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+</style>
+
+</style>
+
 <body>
-    
-  <div class="dropdown">
-    <button class="btn_light"><font face="Arial" ;="" size="5">Află cine îți este <br>  medicul de familie</font><br>
-  <br>
-    <input type="text" placeholder="Căutare după stradă, nume ..." id="cautamedic" onkeyup="filterFunction()" autocomplete="off"><br>
-    </button>
-  <div id="dropdown" class="dropdown-content">
-  
-    <!-- ============================================================================ -->
-    <!-- ============================================================================ -->
-    <!-- ===================================1======================================== -->
-  
-  <b href="#base" >MF  nr.1, Sect - 2  <br> <font size="3" color="red"> MARTEA IRINA</font> <br>----------<br>Ismail  92, 92/1, 94/1,  96,  96/1 <br>
-  Columna 51, 57, 59 <br>
-  D.Cantemir 5, 5/5 <br>
-  Starostenco 25, 29, 31 <br>----------<br> Informația: (373 22) 274-398<br>
-  Registratura mf.1: 022279363</b>
-  
-  <b href="#base" >MF  nr.1, Sect - 4  <br> <font size="3" color="red"> CHICU NINA</font> <br>----------<br>Ismail 86, 86/1, 90, 92/2, 45, 47, 88 <br>
-  Tighina 61 <br>
-  Bd.Negruzzi 8 <br>
-  M.Varlaam 46, 48, 50, 52 <br>
-  Anestiade 6, 8 <br>----------<br>  Informația: (373 22) 274-398<br>Registratura mf.1: 022279363</b>
-  
-  <b href="#base" >MF  nr.1, Sect - 5  <br> <font size="3" color="red"> SÎRGHI NATALIA</font> <br>----------<br>St. cel Mare 3, 6, 6/2<br>
-  Ismail 58/1 <br>----------<br>  Informația: (373 22) 274-398<br>Registratura mf.1: 022279363</b>
-  
-  <b href="#base" >MF  nr.1, Sect - 6  <br> <font size="3" color="red"> CRIVOUHOVA VALENTINA</font> <br>----------<br>Gagarin 1, 3, 5, 7, 9, 13,  <br>
-  Gagarin 7A, B, V, G, D, E  <br>
-  Tiraspol 2, 4, 6, 2/1,  <br>
-  Piața Garii 1, 2,  <br>
-  Aleea Garii 36, 37,  <br>
-  Negruzzi 1, 5,  <br>----------<br>  Informația: (373 22) 274-398<br>
-  Registratura mf.1: 022279363</b>
-  
-  <b href="#base" >MF  nr.1, Sect - 8  <br> <font size="3" color="red"> PRIPA SILVIA</font> <br>----------<br>St. cel Mare 64, 71, 124A,  <br>
-  Bucuresti 36, 36A, 42, 44, 46,  <br>
-  Bulgara 35, 41, 46, 48,  <br>
-  31 August 50, 53, 55, 58, 59, 60, 62,  <br>----------<br>  Informația: (373 22) 274-398<br>Registratura mf.1: 022279363</b>
-  
-  <b href="#base" >MF  nr.1, Sect - 9  <br> <font size="3" color="red"><br>COSMIR DIANA</font><br>----------<br>Armeneasca 33, 35, 37, 43, 30, 40, 42, 44, 47,  <br>
-  31 August 46,  <br>
-  Tighina 26, 28, 30, 53, 55,  <br>
-  St. cel Mare 62, 67,  <br>
-  V. Micle 1, 1A, 2, 4,  <br>
-  Anestiade 3,  <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.1: 022279363</b>
-  
-  <b href="#base" >MF  nr.1, Sect - 11  <br> <font size="3" color="red"><br>ROSCA ANGELA</font><br>----------<br>
-  Armeneasca 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31 <br>
-  Armeneasca 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28 <br>
-  Bucuresti 27, 29, 31, 33, 35, 37, 39, 41, 43, 45 <br>
-  Sciusev 23, 25, 27, 29, 31, 33, 35, 37, 39 <br>
-  Sciusev 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40  <br>
-  Kogalniceanu 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39 <br>
-  Bernardazzi 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 47, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57 <br>
-  <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.1: 022279363</b>
-  
-  <b href="#base" >MF  nr.1, Sect - 14  <br> <font size="3" color="red"><br>ALEXEENCO ALINA </font><br>----------<br>Haltei 3, 5, 7, 9a, 11, 21/1, 21/2, 21/3, 23, 4...8 <br>
-  St-la Haltei 1...23 <br>
-  Bazinului 2...16 <br>
-  Carbunarilor 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 <br>
-  Scoreni 2...16 <br>----------<br>
-  Informația: (373 22) 274-398<br>Registratura mf.1: 022279363</b>
-  
-  <b href="#base" >MF  nr.1, Sect - 17  <br> <font size="3" color="red"><br>BALAN  IRINA</font><br>----------<br>A.Mateevici 5, 7, 9, 11, 13, 15, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36 <br>
-  Tighina 2/3, 2/4 <br>
-  Bulgara 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44 <br>
-  A.Sciusev 4, 6, 8, 10, 12, 5, 7, 9, 11, 13, 15, 17, 19, 21 <br>
-  Bucuresti 11...23 <br>
-  M.Kogalniceanu 1...14 <br>
-  A.Bernardazzi 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23 <br>
-  A.Bernardazzi 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24 <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.1: 022279363</b>
-  
-  <b href="#base" >MF  nr.1, Sect - 20  <br> <font size="3" color="red"><br>OPREA  EUGENIA</font><br>----------<br>L.Tolstoi 72, 74, 78 <br>
-  Bd.Negruzzi 2/2, 2/3, 4/2, 4, 6, 2/6, 6/2, 10 <br>
-  Anestiade 26, 32, 41, 43 <br>
-  Ciuflea 34, 45, 46, 47, 48, 49 <br>----------<br>
-  Informația: (373 22) 274-398<br>Registratura mf.1: 022279363</b>
-  
-  <b href="#base" >MF  nr.1, Sect - 27  <br> <font size="3" color="red"><br>DIMOV  LACRAMIOARA</font><br>----------<br>D.Cantemir 1, 3 <br>
-  Ismail 84 <br>
-  Ciuflea 32, 38/2 <br>
-  L.Tolstoi 63 <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.1: 022279363</b>
-  
-  <!-- ============================================================================ -->
-  <!-- =====================================2====================================== -->
-  
-  <b href="#base">MF  nr.2, Sect - 1  <br> <font size="3" color="red"><br>REVENCO MARIANA</font><br>----------<br>
-  C. Vîrnav 1, 3, 5, 7, 9, 1A, 1B, 4a, b, v, g, d, j, z, i, g, 11B, C, D, G, 6, 8, 10, 12, 14,  <br>
-  I. Soroceanu  71A, 71B, 71V, 73, 73/2, 73/3, 75, 77,  <br>
-  M. Lomonosov  61/8, 63/8, 65/3,  <br>
-  M. Mică  5, 9, 10, 11/4, 11/10, 61/3, 68/1, 68/2, 6/2, 70, 70/2, 70/3, 72,  <br>
-  N. Testemițeanu  22, 22/1, 22/2, 22/3, 24, 24/1, 24/2, 24/3, 24/4, 26, 30,  
-  <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.2: 022271508</b>
-  
-  <b href="#base" >MF  nr.2, Sect - 10  <br> <font size="3" color="red"><br>MÎŢU MARIA</font><br>----------<br>
-  31 august  22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44   <br>
-  31 august  21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47 <br>
-  31 august 17, 19  <br>
-  Lev  Tolstoi 27 <br>
-  Tighina 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39 <br>
-  Tighina 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22 <br>
-  Tighina2/1, 2/2 <br>
-  Bucuresti 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28 <br>
-  Bucuresti 1, 3, 5, 7, 9 
-  <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.2: 022271508</b>
-  
-  <b href="#base" >MF  nr.2, Sect - 12  <br> <font size="3" color="red"><br>TIMOTIN ECATERINA</font><br>----------<br>
-  Mihai Ceachir 1, 3, 3A, 5, 7, 9, 11, 17, 2, 4, 6, 8, 10, 12, 14, 16,  <br>
-  Chițcani 3...30,  <br>
-  Coșnița 1...20 <br>
-  Fierarilor 1...20 <br>
-  I. Geamăna 1...6,  <br>
-  I. Inculeț 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 <br>
-  I. Nistor  2, 4, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45 <br>
-  M. Eliade 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38 <br>
-  Mereșeni 1...6 <br>
-  Negureni 1, 3, 5, 7, 9, 11, 13, 15, 2, 4, 6, 8, 10, 12, 14, 16 <br>
-  Sărăteni 1...8 <br>
-  Str-la Fierarilor 1...12 <br>
-  Suruceni 1...6,  <br>
-  Cocieri 1...12 <br>
-  A. David 1...23 <br>
-  P. Botu 1...11 <br>
-  Valea Podului 1...9 <br>
-  Girlitei 1, 2 
-  <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.2: 022271508</b>
-  
-  <b href="#base" >MF  nr.2, Sect - 13  <br> <font size="3" color="red"><br>CAZACU VICTORIA</font><br>----------<br>
-  I. Soroceanu 2, 4, 6, 8, 10, 1, 3, 5, 7, 9, 11, 13 <br>
-  M, Mică 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 20, 21, 23, 25, 27, 29, 31, 33, 35, 36, 37, 39, 41, 43, 45, 47 <br>
-  N. Guțu 1, 3, 5...7, 9, 11, 13, 15  <br>
-  N. Testemițeanu 11, 13, 13/1, 13/2, 17, 18 <br>
-  Romantică 1, 3, 5, 7, 9, 2, 4, 6, 8, 10 <br>
-  Sclifos 1, 2, 4, 6...8, 10...27, 30,  <br>
-  Str-la I, Soroceanu 1, 3, 5, 7, 9 <br>
-  Str-la M, Mică 2...11, 16,  <br>
-  Untilă 1...23 <br>
-  Vatamanu 1...7 <br>
-  Stradela Vatamanu  1...22 <br>
-  Fratii Apostol 1...16 
-  <br>----------<br>Informația: (373 22) 274-398<br>
-  Registratura mf.2: 022271508</b>
-  
-  <b href="#base" >MF  nr.2, Sect - 15  <br> <font size="3" color="red"><br>DONICI IANA</font><br>----------<br>
-  Dumbrăvii 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 27,  <br>
-  Str-la Hrușcă 1...11,  <br>
-  V. Trandafirilor 1, 2/1, 3...5, 6/1, 6/2, 16, 18, 20, 22, 24,  
-  <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.2: 022271508</b>
-  
-  <b href="#base" >MF  nr.2, Sect - 16  <br> <font size="3" color="red"><br>IGNATIUC LIDIA</font><br>----------<br>
-  Avicenna 1, 3, 5, 7, 9 <br>
-  C. Vârnav 32a, 32b,  <br>
-  Korolenko 10, 12,  <br>
-  P. M, Grecu 3, 5, 7, 9, 11 <br>
-  N. Testemițeanu  30, 31/1, 31/4, 31/6, 37,  <br>
-  Tudor Strișcă 15...17,  <br>
-  Actor Chiril Știrbu 5, 7, 9...12, 14...16, 18, 20, 22 <br>
-  M. Berezovschii 11, 13, 14, 16...24, 26 <br>
-  A. I, C, Suruceanu 1/A, 1/B, 1/C, 1/D, 1/E, 2, 3/3, 5, 5/1, 5/2, 5/3, 6, 7, 7/1, 7/2, 7/A, 9, 9/1, 9/2, 9/3, 11, 11/2, 13/2, 15, 15/1, 17, 17/1, 17/2, 17/3 
-  <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.2: 022271508</b>
-  
-  <b href="#base">MF  nr.2, Sect - 25  <br> <font size="3" color="red"><br>VASILIEV MARIANA</font><br>----------<br>
-  Arțarului 1...8,  <br>
-  Str-la Dumbrăvii 3, 5, 7,  <br>
-  Str-la Hrușca 1, 3, 5, 7, 9, 11; 2, 4,  <br>
-  Odesa 2...65, 67,  <br>
-  Str-la 2 Odesa,  <br>
-  Str-la 3 Odesa,  <br>
-  Str-la 6 Odesa 1...6,  <br>
-  Str-la 7 Odesa,  <br>
-  Str-la 9 Odesa,  <br>
-  Str-la 14 Odesa,  <br>
-  Str-la Cernica 1...16,  <br>
-  Str-la Gării 3...5,  <br>
-  Str-la Negruzzi 1...3,  <br>
-  Str-la Socilor 9, 11, 13,  <br>
-  Str-la Tecuci 1...7,  <br>
-  Str-la Tisa 1...10,  <br>
-  Tecuci 3/1,  <br>
-  Zaim 1...10,  
-  <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.2: 022271508</b>
-  
-  <b href="#base" >MF  nr.2, Sect - 32  <br> <font size="3" color="red"><br>CRECIUN ELENA</font><br>----------<br>
-  Melestiu 15, 16, 16/2, 16/3, 14/3, 14/4, 20, 22, 22/1, 22/2, 24, 26/1, 26/2, 26/3, 26/4, 26/5, 26/6, 26/7, 26/8, 26/9, 26/10,  
-  <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.2: 022271508</b>
-  
-  <b href="#base" >MF  nr.2, Sect - 33  <br> <font size="3" color="red"><br>CACEROVSCAIA ALESEA</font><br>----------<br>
-  Avicena 4, 6...8, 9, 9/1, 10...13, 15, 15/1, 16...21, 23, 24, 24A, 25...28, 30, 31, 31/1, 32 <br>
-  C. Vîrnav 19/1, 19/2, 19/3, 19/4, 20/1, 20/2, 23/1, 22, 23, 24, 26, 28, 30, 31,  <br>
-  N. Testemițeanu 17/1, 17/2, 17/3, 17/4, 17/6, 17/7, 17/8, 17/9, 17/10, 17/11, 17/12, 17/13, 17/14, 17/15, 17/16, 17/17, 17/18, 17/19, 17/20, 19/A, 19/B, 19/1, 19/2, 19/3, 19/4, 19/5, 19/6, 19/7, 19/8, 19/9, 21, 21/1, 21/2, 21/3, 21/4, 21/5, 21/6, 21/7, 23, 23/1, 23/2, 23/3, 23/4,  
-  <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.2: 022271508</b>
-  
-  <b href="#base" >MF  nr.2, Sect - 34  <br> <font size="3" color="red"><br>UJACOV SVETLANA</font><br>----------<br>
-  31 August 1, 1/1, 2, 2A, 3...9,  10A, 11, 12, 14, 16, 18, 20,  <br>
-  Ciuflea 1, 4, 6,  <br>
-  Ismail 9, 11, 13, 15...25, 27, 28, 30, 31, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58,  <br>
-  L. Tolstoi 4...7, 9, 11...20, 22, 23, 24/1, 25, 29, 31, 33...44, 46, 48, 50, 52, 54, 56, 58,  <br>
-  Milești  3, 4, 7/1, 7A, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34,  <br>
-  Sciusev 1...3,  <br>
-  Str-la 31 August 1...4, 6, 8...10, 14, 16, 18, 22, 24, 26 <br>
-  Vasilenco 2, 4, 12, 14, 16, 18, 20, 22, 24/1,  26, 28, 30, 32, 34, 36, 38,  
-  <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.2: 022271508</b>
-  
-  <b href="#base" >MF  nr.2, Sect - 35  <br> <font size="4" color="red"><br>PAVLOVSCHI NINA</font><br>----------<br>
-  Arborilor 1...21 <br>
-  N. Gheorghiu 1, 3, 7, 11, 13, 15, 17, 19, 21, 23, 25, 25/1, 27, 27/1, 27/2, 27/3,  29, 29/1, 29/2, 29/3, 29/4, 30, 31, 44, 44/3,  <br>
-  N. Tetemițanu 3/a, 3/2, 3/3, 3/4, 3/5, 3/6, 3/7, 3/8, 3/9, 3/10, 3/11, 3/12 (MA), 3/13, 3/14 (MA), 3/15, 3/16(MA), 3/17, 3/18, 3/19,  
-  <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.2: 022271508</b>
-  
-  <b href="#base" >MF  nr.2, Sect - 36  <br> <font size="3" color="red"><br>SECRIERU PAVEL</font><br>----------<br>
-  Copaceni 1, 3, 5...8, 8/1, 9...13, 15, 19, 21, 23, 25, 25B, 27, 29, 31, 31/1,  <br>
-  bd. Decebal 6/1, 6/2, 6/3, 6/4,  <br>
-  Dobrusa 1...6, 8...12, 14, 16, 16/1, 16/2,  <br>
-  Fantanilor 1...3, 3/1, 4...6, 8, 8a, 9...12, 14, 16, 18...21, 24, 26, 28, 30, 32, 34/1, 34/2, 36, 36/2, 38, 40, 42, 46, 48, 50, 50b, 52, 54,  <br>
-  Mazililor 21, 21/1, 22, 24, 25, 25/1, 27, 28, 29, 30, 31, 32, 32/1, 32/2, 34/2, 34/3, 34/4, 34/5, 34/6,  <br>
-  Melestiu 1/1, 1/2, 1/3, 6, 8, 9...11,  <br>
-  Stolniceni 1, 3, 5, 5a, 7, 9,  <br>
-  Vorniceni 1...3, 5, 6,  
-  <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.2: 022271508</b>
-  
-  <b href="#base" >MF  nr.2, Sect - 37  <br> <font size="4" color="red"><br>RUSU IRINA</font><br>----------<br>
-  Arheolog Ion Casian Suruceanu 13, 15,  <br>
-  Hristo Botev 4, 4/1, 4/2, 6,  <br>
-  Malina Mare 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48 <br>
-  Nicolae Testemitanu 29/2 <br>
-  Tudor Strisca 8/1, 8/2, 8/3, 8/4, 8/5, 8/6, 8/7, 15, 16, 17 <br>
-  <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.2: 022271508</b>
-  
-  <b href="#base" >MF  nr.2, Sect - 38  <br> <font size="4" color="red"><br>GRAJDIERU CORINA</font><br>----------<br>
-  Camenița 2...4,  <br>
-  Caucaz 1...22,  <br>
-  Cristești 1...6,  <br>
-  Str-la 1Caucaz 1...27,  <br>
-  Str-la 2Caucaz 1...10,  <br>
-  Str-la 3Caucaz 1...8,  <br>
-  GH. Casu 2, 2/1, 2/2, 2/3,  2/8, 4, 4/1, 4/2,  9...14, 16, 18, 19, 21/2, 20/2, 20/4, 22...25, 27, 27/1, 29, 31, 35/2  <br>
-  I. Inculet  30, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100,  105/1, 105/2, 105/3, 105/4 <br>
-  <br>----------<br>Informația: (373 22) 274-398<br>Registratura mf.2: 022271508</b>
-  
-  <!-- ============================================================================ -->
-  <!-- ======================================3===================================== -->
-  
-  <b href="#base" >MF  nr.3, Sect - 2  <br> <font size="3" color="red"> FRUMUSACHI SILVIA</font> <br>----------<br>
-  Lech Kaczynski 2/1, 2/2, 2/3, 2/4, 6/2, 6/3,  <br>
-  Șos. Hînceşti 59, 64a, 64b, 64v, 84/1, 84/2, 84, 84A  
-  <br>----------<br>Informația: (373 22) 727-673<br>Registratura mf.3: 022727658</b>
-  
-  <b href="#base" >MF  nr.3, Sect - 3  <br> <font size="3" color="red"> SOCOLIUC VICTORIA</font> <br>----------<br>
-  Academiei 2, 4, 6/1, 6/2, 8/1, 8/2, 10, 12,  <br>
-  Miorita 1/1A, 1/1B, 1/1C, 1/1D, 1/1E, 1/1F, 10, 12, 14, 20/1,  <br>
-  Șos. Hînceşti 55/3, 55/4, 55/5, 55/6, 
-  <br>----------<br>Informația: (373 22) 727-673<br>Registratura mf.3:022727658</b>
-  
-  <b href="#base" >MF  nr.3, Sect - 6  <br> <font size="3" color="red"> BORODINA NATALIA</font> <br>----------<br>
-  Academiei 7, 9/1, 9/2, 9/4, 9/5,  <br>
-  Șos. Hînceşti 60/1, 60/3, 62A, 62/2, 62/3, 66, 68, 70, 70/3, 70/4, 72, 74, 76/1, 76/2, 76/4, 78, 78A, 80, 82,  
-  <br>----------<br>  Informația: (373 22) 727-673<br>Registratura mf.3: 022727658</b>
-  
-  <b href="#base" >MF  nr.3, Sect - 18  <br> <font size="3" color="red"> JURJIU NATALIA</font> <br>----------<br>
-  Fecioarei 1...25, 2...18,  <br>
-  Lermontov 74...148, 37...73,  <br>
-  Miciurin...Durlesti 8...105,  <br>
-  Roguleni 18...46, 33...69,  <br>
-  Sf. Vinere 74...116, 43...85,  <br>
-  Șos. Hînceşti 153...254,  <br>
-  Tatarbunar 6...40, 7...19,  <br>
-  Vieru 40...55,  
-  <br>----------<br> Informația: (373 22) 727-673<br>Registratura mf.3: 022727658</b>
-  
-  <b href="#base" >MF  nr.3, Sect - 29  <br> <font size="3" color="red"> CHIABURU ADELA</font><br>----------<br>
-  Academiei 11/2, 13/3, 15/2, 17, 9/7,  <br>
-  Dr. Viilor 99,  <br>
-  Lech Kaczynski 6/1, 6/4, 10/2, 10/3, 10/4,  <br>
-  Pietrarilor 2, 2A,  <br>
-  Șos. Hînceşti 62,  
-  <br>----------<br>Informația: (373 22) 727-673<br>Registratura mf.3: 022727658</b>
-  
-  <b href="#base" >MF  nr.3, Sect - 30  <br> <font size="3" color="red"> GAMURAR LUDMILA</font> <br>----------<br>
-  Dealul cucului 1, 3, 40, 46, 56 <br>
-  Ialoveni 8...92/2pare, 87, 92/6, 94/2, 94, 96, 96v,  <br>
-  Șos. Hînceşti 98, 106...124,  <br>
-  Garoafelor 1...17 <br>
-  Cismele 1...39 <br>
-  Vilcele 1, 1/1, 1/2, 2...46 <br>
-  Valeni 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22 <br>
-  Crinilor 1...20 <br>
-  Cimbrului 1...19 <br>
-  Teodor Malai 7...9, 11, 13a, 15, 17, 117, 119, 121, 121/1, 123, 125 
-  <br>----------<br> Informația: (373 22) 727-673<br>Registratura mf.3: 022727658</b>
-  
-  <b href="#base" >MF  nr.3, Sect - 31  <br> <font size="3" color="red"> PETRAȘOVA NATALIA</font> <br>----------<br>
-  Ialoveni 89, 96A, 96B, 96/3, 98/1, 98/2, 98/3, 100A, 100/1, 102, 102/1, 103,  <br>
-  Lermontov 2...10,  <br>
-  Struguras 168,  
-  <br>----------<br>  Informația: (373 22) 727-673<br>Registratura mf.3: 022727658</b>
-  
-  <b href="#base" >MF  nr.3, Sect - 34  <br> <font size="3" color="red"> CEBOTARI OXANA</font> <br>----------<br>
-  Dr. Viilor 28, 28/1, 30/2, 43,  <br>
-  Mitropolit Gurie Grosu 26, 30, 32, 34, 34/1 36, 38, 36/1, 36/2 <br>
-  Str-la 1 Ciocirliei toata <br>
-  Str-la 2 Ciocîrliei toata <br>
-  Șos. Hînceşti 68A,  <br>
-  Vasile Cheltuiala 4A, 27/1, 27/2, 40, 42,  <br>
-  Nichita Smochina (toata), Primar Carol Schmidt (toata) <br>
-  Trifan Balta (toata) <br>
-  Strada Ciocirliei 15, 1, 2/5, 2/7, 2/8, 4/2, 4/4, 4/5, 4/6, 4/74/14, 4/18, 4/47, 17, 19, 21, 23, 25, 25a, 27a, 27, 27 A,  31, 31/1, 31A, 31B, 33/1, 33/2, 33/2, 41, 41/1, toata <br>
-  Avocat Eugenia Crusevan 4, 6, 8, 10, 12, 14, 16 
-  <br>----------<br>  Informația: (373 22) 727-673<br>Registratura mf.3: 022727658</b>
-  
-  <b href="#base" >MF  nr.3, Sect - 35  <br> <font size="3" color="red"> PATRAȘCU NATALIA</font> <br>----------<br>
-  Dr. Viilor 16...26, 26/1, 11...27, 29, 37, 39, 41,  <br>
-  Lapușnei 8...18, 20, 13...21,  <br>
-  Nucarilor 1...1A toata 21A, 28, 48, 11 <br>
-  Str-la Agnesa Rosca 2...6 
-  <br>----------<br> Informația: (373 22) 727-673<br>Registratura mf.3: 022727658</b>
-  
-  <b href="#base" >MF  nr.3, Sect - 37  <br> <font size="3" color="red">BERESTEAN SVETLANA</font> <br>----------<br>
-  Capricorn 1...15, 2...16,  <br>
-  Ialoveni 1...79,  <br>
-  Lermontov 30...68, 17...31,  <br>
-  Roguleni 1...31, 2, 16, 46, Zodiac 1...15, 6...52,  <br>
-  Sf. Vinere 16A, 1...20, 16, 1...45, 2...72, 3...37,  <br>
-  Str-la Lermontov 10...27,  <br>
-  Șos. Hînceşti 126...154, 142, 142/1, 142/2, 142/3, 142A, 142B 142C,  <br>
-  Valea Rediului 2...26, 1...41,  <br>
-  Sperantei, Crizantemelor, Parascovia Didic 
-  <br>----------<br>Informația: (373 22) 727-673<br>Registratura mf.3: 022727658</b>
-  
-  <!-- ============================================================================ -->
-  <!-- ====================================4======================================= -->
-  
-  <b href="#base" >MF  nr.4, Sect - 1  <br> <font size="3" color="red"> ȚIPLE TAMARA</font> <br>----------<br>
-  Docuciaev 6,  <br>
-  Șos. Hînceşti 22a, 22b, 32, 34/1, 34/2, 40a, 40b, 58, 58/1, 60/2, 42, 44, 29, 31, 35, 43, 41,  
-  <br>----------<br>  Informația: (373 22) 727-673<br>Registratura mf.4: 022725495</b>
-  
-  <b href="#base" >MF  nr.4, Sect - 4  <br> <font size="3" color="red"> CUCURUDZA LARISA</font> <br>----------<br>
-  Docuciaev 26, 28, 30, 32, 34, 36, 38, 21, 23, 25, 27, 29, 31,  <br>
-  Dr. Viilor 30a, 30b, 30g, 43/1, 69, 71, 73, 79, 83, 85, 87, 89, 91, 93, 95, 97/1 <br>
-  Frumoasa 5, 7, 9, 11, 13, 15, 15/1, 15/2, 15/3, 17, 19, 21, 21/1, 21/2, 23, 25, 27, 29, 31, 33, 37, 39, 41, 43, 71, 2...88,  <br>
-  G. Grosu 14, 24, 19, 27, 29, 31,  <br>
-  G. Tudor 8, 10,  <br>
-  Lapușnei 4, 6 <br>
-  Morosanu 1...17, 2...10,  <br>
-  Onesti 1...37, 2...40,  <br>
-  Șos. Hînceşti 60a,  <br>
-  V. Cupcea 1...109, 2...84,  <br>
-  Valea Dicescu 45, 48...160, 19...119,  
-  <br>----------<br>Informația: (373 22) 727-673<br>Registratura mf.4: 022725495</b>
-  
-  <b href="#base" >MF  nr.4, Sect - 5  <br> <font size="3" color="red"> GROZA SVETLANA</font> <br>----------<br>
-  Docuciaev 1, 1a, 1b, 1c, 3, 13, 2, 4, 2/1, 2/2, 2/3, 2/4,  <br>
-  G. Asachi 52, 29,  <br>
-  Pomilor 2, 11,  <br>
-  Wilems 10, 14,  <br>
-  Sprincenoaia 1(camin) <br>
-  Testimiteanu 28 
-  <br>----------<br> Informația: (373 22) 727-673<br>Registratura mf.4: 022725495</b>
-  
-  <b href="#base" >MF  nr.4, Sect - 7  <br> <font size="3" color="red"> DRAGUȚA ELENA</font> <br>----------<br>
-    G. Asachi 53, 53/1, 53/2, 51, 61,  <br>
-  Korolenko 1, 3, 3/2, 5, 57, 59/1, 59/2, 61/2,  <br>
-  Lomonosov 42,  
-  <br>----------<br>  Informația: (373 22) 727-673<br>Registratura mf.4: 022725495</b>
-  
-  <b href="#base" >MF  nr.4, Sect - 8  <br> <font size="3" color="red"> ISAC NINA</font> <br>----------<br>
-  G. Asachi 58, 64/1, 62/1, 62/2, 62/3, 62/4, 62/5, 60/1, 62, 63,  <br>
-  Grosu Ioan 4  
-  <br>----------<br>  Informația: (373 22) 727-673<br>Registratura mf.4: 022725495</b>
-  
-  <b href="#base" >MF  nr.4, Sect - 10  <br> <font size="3" color="red"> ROBU ELENA</font> <br>----------<br>
-  Miorita 3/1, 3/2, 7/1, 5/3, 5/4, 5/5,  <br>
-  Miorita  30, 40, 50 <br>
-  Stradela Radautan 3...50,  <br>
-  Sprîncenoaia 1A, 1...6, 1B, 1/1, 3(a, b, c, d, e, f, g) <br>
-  Șos. Hînceşti 57a,  <br>
-  T. Malinovschii 18,  <br>
-  Sprîncenoaia  5(b, c, d, e, f, g, h) 
-  <br>----------<br>  Informația: (373 22) 727-673<br>Registratura mf.4:022725495</b>
-  
-  <b href="#base" >MF  nr.4, Sect - 11  <br> <font size="3" color="red"> SÂRBU NATALIA</font> <br>----------<br>
-  G. Asachi 68/1, 66/1,  <br>
-  Miorita 11, 9/1, 5/1, 5/2, 44 
-  <br>----------<br>  Informația: (373 22) 727-673<br>Registratura mf.4: 022725495</b>
-  
-  <b href="#base" >MF  nr.4, Sect - 15  <br> <font size="3" color="red"> SALAMUD VIOLETA</font> <br>----------<br>
-  Șos. Hînceşti 71,  <br>
-  Sihastrului 1, 3, 5, 7, 9, 11, 13, 15, 15/1, 15b, 17, 17a, 19, 21, 23, 25, 27, 29, 29a, 29g, 31, 33, 33/1, 33/3, 33b, 33a, 33d, 35,  35/2, 37, 39, 41, 43, 45, 47, 49, 51, 51/3, 55, 55a, 57, 59, 59a, 61, 63, 65, 67, 67a, 69, 71, 71a, 73, 75a, 75b, 77, 79, 81, 81a <br>
-  Sihastrului 2, 2/1, 4, 6, 8, 10, 10a, 12, 12a, 14, 14a, 16, 16a, 18, 18a, 20, 22, 22a, 24, 26, 28, 30, 32, 32/2, 32b, 34, 36, 38, 40, 42/2, 44, 46g, 48, 50, 50a52, 54, 56, 58, 60, 60b, 62, 64, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92 <br>
-  str-la 1 Sihastrului 1...28 <br>
-  str-la 2 Sihastrului 1, 2, 4, 6, 8, 10, 12, 14, 17,  <br>
-  str-la 3 Sihastrului 1, 2/1, 2a, 2b, 3...6, 9 <br>
-  str-la 4 Sihastrului 2...5, 5/1, 6...10 <br>
-  Baltagi 1, 3, 5, 7, 9, 11, 13, 15a, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39/12, 4, 6, 8, 10, 12, 14, 16, 18, 18a, 20, 22, 24, 26, 28, 30 <br>
-  Sf. Stefan 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 35,  37, 39, 41,  2, 4, 6, 8, 10, 12, 18, 22, 22b, 24, 28, 30, 32 <br>
-  str-la 1 Pomicultorilor 3, 4, 4/1, 5 <br>
-  str-la 2 Pomicultorilor  1...8 <br>
-  str-la 3 Pomicultorilor  1...8 <br>
-  str-la 4 Pomicultorilor 1...9, 11 <br>
-  str-la 5 Pomicultorilor 1...15 <br>
-  str-la 6 Pomicultorilor 2, 4, 6, 8, 10, 12, 14, 16 <br>
-  str Bugeacului 1, 2, 2a, 3...6, 7, 8, 8/1, 9, 11, 13, 15, 17, 19 <br>
-  Haiducilor  1...27, 27a, 28, 30, 32, 34, 36, 38, 40, 42, 44 <br>
-  Mart, Brincoveni  1...6 <br>
-  Aurel Vlaicu  1 <br>
-  Dumbravei 1...47, 2...108 <br>
-  Viticultorilor 1...19, 2...14 <br>
-  Coop Flaximan 1...63, 2...60 <br>
-  Padurilor 2...94, 3...109 <br>
-  str-la Padurilor 2...12, 1...9 <br>
-  vile NPO Vieru 2...54, 1...57 <br>
-  vile Codru 2...52, 1...57 <br>
-  vile Vesna 2...82, 1...79 <br>
-  Strugurasilor 4...6, 12, 16 <br>
-  Coop. Vile Progres 56, 57, 71 
-  <br>----------<br>  Informația: (373 22) 727-673<br>Registratura mf.4: 022725495</b>
-  
-  <b href="#base" >MF  nr.4, Sect - 23  <br> <font size="3" color="red"> CURECHERU AURELIA</font> <br>----------<br>
-  G. Asachi 25, 27, 27A, 27B, 27V, 27D, 27E 31, 33, 36, 37/1, 37/2, 40, 42, 43, 44, 47, 48/1, 48/2, 49a,  <br>
-  G. Grosu 1...3, 5, 9, 11, 12, 15,  <br>
-  Korolenko 61/3,  <br>
-  Lomonosov 38, 38/2, 40, 40/1, 40/2,  
-  <br>----------<br>  Informația: (373 22) 727-673<br> Registratura mf.4: 022725495</b>
-  
-  <b href="#base" >MF  nr.4, Sect - 33  <br> <font size="3" color="red"> ZANOCI IULIANA</font> <br>----------<br>
-  G. Asachi 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34,  <br>
-  G. Tudor 1, 3, 5, 7, 2, 2/1, 2/2, 3/1  <br>
-  Șos. Hînceşti 2, 2/1, 3, 5, 7, 9, 11, 20, 25,  <br>
-  Valea Dicescu 47, 49,  
-  <br>----------<br>  Informația: (373 22) 727-673<br>Registratura mf.4: 022725495</b>
-  
-  <b href="#base" >MF  nr.4, Sect - 36  <br> <font size="3" color="red">MORARI CRISTINA</font> <br>----------<br>
-  Ciresilor 1...77, 2...90,  <br>
-  G. Asachi 49b,  <br>
-  G. Meniuc 2...6, 1...45,  <br>
-  Lacului 1...69, 2...72,  <br>
-  Str-la L. Blaga 1...12,  <br>
-  Str-la Nucarilor 1...9, 2...8,  <br>
-  Str-la T. Aman 3...5, 12...16,  <br>
-  Timis 26...56, 21...49,  <br>
-  V. Alexandri 11,  <br>
-  V. Cheltuiala 9/2, 7, 11, 2...34, 38,  <br>
-  Sprincenoia 3(H, J, K, L, M) 
-  <br>----------<br>  Informația: (373 22) 727-673<br>Registratura mf.4: 022725495</b>
-  
-  <!-- ============================================================================ -->
-  <!-- ===================================5======================================== -->
-  
-  <b href="#base" >MF  nr.5, Sect - 9  <br> <font size="3" color="red"> MARKOVSKAIA NATALIA</font> <br>----------<br>
-  Dr. Viilor 42/3  <br>
-  Pietrarilor 1, 3, 3a,  5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49,  <br>
-  Pietrarilor 4, 4/1, 6, 8, 8/1, 10, 10/1, 10/2, 10/3, 10/5, 10/6, 12, 12/1, 20/1, 22/1, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60,  
-  <br>----------<br>  Informația: (373 22) 727-673<br>Registratura mf.5: 022725468</b>
-  
-  <b href="#base" >MF  nr.5, Sect - 12  <br> <font size="3" color="red"> LEVCA ALA</font> <br>----------<br>
-  Drumul Schinoasei 1/1, 1/2, 1/3, 1/4,  <br>
-  Grenoble 1, 5, 7, 106A, 106/4, 106, 120/10, 120/11,  
-  <br>----------<br> Informația: (373 22) 727-673<br>Registratura mf.5: 022725468</b>
-  
-  <b href="#base" >MF  nr.5, Sect - 16  <br> <font size="3" color="red">COȘCODAN DIANA</font> <br>----------<br>
-  Dr. Viilor 36, 38, 38/1, 40, 42,  <br>
-  Lech Kaczynski 10/1  <br>
-  Pietrarilor 14/1, 14/2, 14/3, 14/4,  
-  <br>----------<br> Informația: (373 22) 727-673<br>Registratura mf.5: 022725468</b>
-  
-  <b href="#base" >MF  nr.5, Sect - 17  <br> <font size="3" color="red"> ARUSOI ALINA</font> <br>----------<br>
-  Grenoble 159A, 159/3, 159/4, 159/5, 159/6, 159/7, 161/2, 161/3, 161/4, 167/1,  <br>
-  Tudor Strișcă 2,  <br>
-  Tudor Strișcă 19/1, 19/2, 19/3, 19/4, 19/5, 19/6  
-  <br>----------<br> Informația: (373 22) 727-673<br>Registratura mf.5: 022725468</b>
-  
-  <b href="#base" >MF  nr.5, Sect - 19  <br> <font size="3" color="red">DOLGANIUC-BABĂRĂ CRISTINA</font> <br>----------<br>
-  Costiujeni 3/14, 3/12A, 3/18, 3/17, 3, 5, 5/1, 5/13, 7, 7/7, 90, 92  <br>
-  GRENOBLE 120/7, 120/8, 120/9,  <br>
-  Luceafarul 1...13, Case particulare impare,  <br>
-  Cimpului 1...59, Case particulare impare,  <br>
-  Gliei 1...23, Case particulare impare,  <br>
-  Grinelor 2...30, Case particulare pare,  <br>
-  Soarelui 132...202, Case particulare impare,  <br>
-  Str-la Valea Apelor I, II, III, IV, 25, 27,  <br>
-  Turghenev 2...30, Case particulare pare,  
-  <br>----------<br> Informația: (373 22) 727-673<br>Registratura mf.5: 022725468</b>
-  
-  <b href="#base" >MF  nr.5, Sect - 20  <br> <font size="3" color="red"> MUNTEANU ALINA</font> <br>----------<br>
-  Grenoble 120/5, 120/6 <br>
-  Potirnichii 1...110,  <br>
-  Sf. Dumitru 1...36,  <br>
-  Sf. Gheorghe 1...105,  <br>
-  Sf. Maria 1...22,  <br>
-  Sf. Nicolai 1...107,  <br>
-  Sf. Vasile 1...45,  <br>
-  Colinei 1...21,  <br>
-  Str-la Busuiocului 1...56, 1...30,  <br>
-  Str-la Colinei 1...18,  <br>
-  Str-la Sitarului 1...36, 1...38, 1...34,  
-  <br>----------<br>  Informația: (373 22) 727-673<br>Registratura mf.5: 022725468</b>
-  
-  <b href="#base" >MF  nr.5, Sect - 22  <br> <font size="3" color="red"> BALICA NADEJDA</font> <br>----------<br>
-  Drumul Schinoasei 1...140, case particulare <br>
-  G. Asachi 77, 71A, 71/1, 71/2, 71/3, 71/4, 71/5, 71/6, 71/7, 79/1, 79/2, 71/8,  <br>
-  Grenoble 106b,  <br>
-  Mihai Eminescu case particulare <br>
-  Ion  Creanga case particulare <br>
-  V. Alexandri case particulare <br>
-  Schinoasa Noua case particulare 
-  <br>----------<br> Informația: (373 22) 727-673<br>Registratura mf.5: 022725468</b>
-  
-  <b href="#base" >MF  nr.5, Sect - 26  <br> <font size="3" color="red">TATARU-COŢOFANĂ OLESEA</font> <br>----------<br>
-  Schinoasa Deal 1...88,  <br>
-  Str-la 1...5  Bujorilor <br>
-  Str-la  1, 2 Izvoarelor,  <br>
-  Str-la 1...4  Cobzarilor <br>
-  Str-la I Schinoasa Deal 1...33,  <br>
-  Str-la II Schinoasa Deal 9...58,  <br>
-  Cobzarilor  <br>
-  Bujorilor <br>
-  Livadarilor  
-  <br>----------<br> Informația: (373 22) 727-673<br>
-  Registratura mf.5: 022725468</b>
-  
-  <b href="#base" >MF  nr.5, Sect - 27  <br> <font size="3" color="red"> MUSTEAȚĂ DIANA</font> <br>----------<br>
-  Grenoble 120/3, 120/4 <br>
-  Braila 6...27,  <br>
-  Costesti 1...68,  <br>
-  Focsani 4...53,  <br>
-  Galati 1...48,  <br>
-  Schinoasa 1...29,  <br>
-  Turturele 1...9,  <br>
-  V. Tepes 2...58,  
-  <br>----------<br>  Informația: (373 22) 727-673<br>Registratura mf.5: 022725468</b>
-  
-  <b href="#base" >MF  nr.5, Sect - 32  <br> <font size="3" color="red"> BOSTAN ANA</font> <br>----------<br>
-  1 Str-la Molocanilor 1...23,  <br>
-  2 Str-la Molocanilor 2...22, <br>
-  Grenoble 120/1, 120/2,  <br>
-  Codru 1...11,  <br>
-  Dragomirna 1...11,  <br>
-  Molocanilor 1...14,  <br>
-  Olimpica 1...18,  <br>
-  Prepelitei 1...82,  <br>
-  Schinoasa Vale 1...82,  <br>
-  Sitarului 1...27,  <br>
-  Sitarului 1...27/5,  <br>
-  Str-la 1 Olimpica 1...18,  <br>
-  Str-la 2 Prepelitei 1...24,  <br>
-  Str-la 1 Prepelitei 1...24,  <br>
-  Str-la 1 Drumul Schinoasei 1...12,  <br>
-  Str-la 2 Olimpica 1...10,  <br>
-  Str-la 3 Drumul Schinoasei 1...37,  <br>
-  Str-la Schinosica 1...14,  
-  <br>----------<br>  Informația: (373 22) 727-673<br>Registratura mf.5: 022725468</b>
-  
-  <!-- ============================================================================ -->
-  <!-- ==================================6========================================= -->
-  
-  <b href="#base" >MF  nr.6, Sect - 7  <br> <font size="3" color="red"> CASTRAVEȚ NELEA</font> <br>----------<br>
-  Gheorghe Casu  20/A, 20/B, 20/1, 20/3, 24, 28/10, 28/11, 28/, 12, 28/13, 28/16  30/A, 30/B, 30/C, 30/D, 30/E, 30/F 
-  <br>----------<br> Informația: (373 22) 274-398<br>Registratura mf.6: (022)272232</b>
-  
-  <b href="#base" >MF  nr.6, Sect - 18  <br> <font size="3" color="red"> CURCUDEL VIORICA</font> <br>----------<br>
-  Vasile Alecsadri 2, 14, 17, 19, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59 <br>
-  Valea Dicescu 1...26, 28, 30, 32, 34, 36, 38, 40, 42,  <br>
-  Dimbului 1...34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54 <br>
-  Anton Crihan 1...46 <br>
-  Drumul Viilor 1...9 <br>
-  Stradela Parcului 1...10 
-  <br>----------<br>  Informația: (373 22) 274-398<br>Registratura mf.6: (022)272232</b>
-  
-  <b href="#base" >MF  nr.6, Sect - 19  <br> <font size="3" color="red"> COCA VICTORIA</font> <br>----------<br>
-  Alexandru Puskin  28, 30 <br>
-  Vlaicu Pircalab  38, 40, 42, 53, 55, 57, 77 <br>
-  Stefan Cel Mare 132 <br>
-  Bucuresti  53, 55, 57, 59, 60, 61, 63, 65, 67 <br>
-  Mitropolit Varlaam 73, 73/75, 75, 84, 86, 88, 90 <br>
-  Mihai Eminescu 31, 39A, 39B, 41, 41/1, 51, 53 <br>
-  31 August  99, 101, 105 <br>
-  Columna  105, 111, 113 
-  <br>----------<br>  Informația: (373 22) 274-398<br>Registratura mf.6: (022)272232</b>
-  
-  <b href="#base" >MF  nr.6, Sect - 21  <br> <font size="3" color="red"> CERNENCAIA CORNELIA</font> <br>----------<br>
-  Bucuresti 50, 52, 47, 49, 51 <br>
-  31 August 1989 89, 91, 93, 95, 64, 66, 66/1 <br>
-  Stefan cel Mare 126, 126A, 128, 128A, 130 <br>
-  Armeneasca 61 <br>
-  Vasile Alecsandri 99, 107, 109, 111, 113, 117, 117A, 121, 125, 127, 129, 56, 58, 60, 66, 68, 70, 72, 74, 80 <br>
-  Mihai Eminescu 40, 42, 48, 48/1, 56, 60, 64 <br>
-  MitropolitVarlaam 67, 69, 67 <br>
-  Columna 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 101, 103 
-  <br>----------<br> Informația: (373 22) 274-398<br>Registratura mf.6: (022)272232</b>
-  
-  <b href="#base" >MF  nr.6, Sect - 22  <br> <font size="3" color="red"> SAPOJCOVA ZOIA</font> <br>----------<br>
-  Galbene 1...6 <br>
-  Universitatii 1...39 <br>
-  Timis 1...24 <br>
-  Alexei  Mateevici 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 40, 42, 46, 48, 50, 52, 54, 56, 58 <br>
-  Bernardazzzi 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97 <br>
-  Mihai Eminescu 1, 5, 7, 9, 11, 13, 2, 6, 8, 10, 12, 14, 16 <br>
-  V. Alexandri  16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 61, 63, 65, 67, 69, 71, 75, 77 
-  <br>----------<br>  Informația: (373 22) 274-398<br>Registratura mf.6: (022)272232</b>
-  
-  <b href="#base">MF  nr.6, Sect - 23  <br> <font size="3" color="red"> CROITORU MARIANA</font> <br>----------<br>
-  Alexandru Puskin 8, 10, 12, 14, 16, 18, 20, 22 <br>
-  Vlaicu Pircalab 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 9, 11, 13, 15, 27, 29, 31, 33 <br>
-  Mihai Eminescu  18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 15, 17, 19, 21, 23, 25, 27, 29 <br>
-  Vasile Alecsandri 46, 48, 50, 52, 54, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97 <br>
-  Alexei Sciusev 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63 <br>
-  Mihail Kogalniceanu 36A, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63 
-  <br>----------<br> Informația: (373 22) 274-398<br>Registratura mf.6: (022)272232</b>
-  
-  <b href="#base" >MF  nr.6, Sect - 24  <br> <font size="3" color="red"> DEMENSCAIA ALISA</font> <br>----------<br>
-  Lomonosov 1...8, 8a, 8b, 9...37, 39, 41, 43, 45, 47,  <br>
-  Cosmescu 1...30, 30/2, 31...35, 37, 39, 41, 43, 45, 47, 49, 51,  <br>
-  Malarciuc 1...8, 10, 12,  <br>
-  Nistor 16, 18, 20, 22, 24, 26, 28, 28B, 30, 32, 34, 36, 38, 40, 42, 44, 49, 51, 53, 53a <br>
-  Pan Halipa  3, 4, 6A, B, C, D, E, F, J,  <br>
-  Ganea 1, 1a, 2...5, 5a, 6...11, 11a, 12, 13, 13a, 13b, 14, 14a, 15...30,  
-  <br>----------<br> Informația: (373 22) 274-398<br>Registratura mf.6: (022)272232</b>
-  
-  <b href="#base" >MF  nr.6, Sect - 26  <br> <font size="3" color="red"> PLOTEAN ANA</font> <br>----------<br>
-  M. Lomonosov 49/1, 49/2, 49/4, 49/7, 51/1, 53 <br>
-  G. Asachi  1, 3, 5, 7, 7V, 9, 11/1, 11/2, 19A, 19B 
-  <br>----------<br> Informația: (373 22) 274-398<br>Registratura mf.6: (022)272232</b>
-  
-  <b href="#base" >MF  nr.6, Sect - 28  <br> <font size="3" color="red"> COROLEAC ANDRIANA</font> <br>----------<br>
-  Albisoara 16/1, 16/2, 18, 20, 22 
-  <br>----------<br> Informația: (373 22) 274-398<br>Registratura mf.6: (022)272232</b>
-  
-  <b href="#base" >MF  nr.6, Sect - 29  <br> <font size="3" color="red">JOSAN ANASTASIA</font> <br>----------<br>
-  Ismail 102/3, 102/4, 106/2, 108, 108/2  <br>
-  A. Cosmescu 5A, 5B, 5C, 5D 
-  <br>----------<br> Informația: (373 22) 274-398<br>Registratura mf.6: (022)272232</b>
-  
-  <b href="#base" >MF  nr.6, Sect - 30  <br> <font size="3" color="red"> BRAUN ALEXANDRA</font> <br>----------<br>
-  Albisoara 8, 10, 12, 14, 16,  
-  <br>----------<br>  Informația: (373 22) 274-398<br>Registratura mf.6: (022)272232</b>
-  
-  <b href="#base" >MF  nr.6, Sect - 31  <br> <font size="3" color="red"> TELPIZ TATIANA</font> <br>----------<br>
-  Ismail  98, 98/2, 100, 100/2, 102, 104,  <br>
-  Albisoara 24,  
-  <br>----------<br> Informația: (373 22) 274-398<br>Registratura mf.6: (022)272232</b>
-  
-  <!-- ============================================================================ -->
-  <!-- ============================================================================ -->
-  <!-- ============================================================================ -->
-  
-  </div>
-  </div>
-  <script src="script.js"></script>
-  </div>
+    <div id="content">Content will appear here...</div>
+
+    <script>
+        async function fetchAndDisplayDiv() {
+            const proxyUrl = 'https://api.allorigins.win/get?url='; // Public CORS proxy
+            const targetUrl = encodeURIComponent('https://amt-centru.md/'); // Replace with the URL you want to fetch
+            const fullUrl = proxyUrl + targetUrl;
+            const selector = '.dropdown'; // Replace with the CSS selector of the div you want to extract
+
+            try {
+                const response = await fetch(fullUrl);
+                const data = await response.json(); // `data.contents` contains the HTML
+                const html = data.contents;
+
+                // Create a temporary DOM element to parse the HTML
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = html;
+
+                // Extract the content of the specified div
+                const extractedDiv = tempDiv.querySelector(selector);
+
+                // Display the content in the current page
+                document.getElementById('content').innerHTML = extractedDiv ? extractedDiv.innerHTML : 'Div not found';
+            } catch (error) {
+                console.error('Error fetching content:', error);
+                document.getElementById('content').innerText = 'Error fetching content';
+            }
+        }
+
+        fetchAndDisplayDiv();
+    </script>
 </body>
+
 </html>
